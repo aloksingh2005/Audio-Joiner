@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Audio Joiner - Merge MP3 Files Easily</title>
+    <meta name="description"
+        content="Join and merge multiple MP3 or audio files into one track instantly. Free, fast, and secure MP3 merger tool.">
+    <meta name="keywords" content="audio joiner, mp3 merger, combine audio files, merge songs, audio converter">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-music"></i> Audio Joiner</h1>
+            <p>Merge multiple audio files into one MP3 track - Free & Secure</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section id="upload-section" class="section">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Drop your audio files here</h3>
+                    <p>Or click to browse files</p>
+                    <p class="supported-formats">
+                        Supports: MP3, WAV, OGG, M4A, AAC, FLAC
+                    </p>
+                    <input type="file" id="file-input" multiple accept=".mp3,.wav,.ogg,.m4a,.aac,.flac">
+                </div>
+            </section>
+
+            <!-- File List Section -->
+            <section id="file-list-section" class="section hidden">
+                <h3><i class="fas fa-list"></i> Selected Files</h3>
+                <div class="settings">
+                    <div class="setting-group">
+                        <label for="quality-select">Output Quality:</label>
+                        <select id="quality-select">
+                            <option value="128k">128 kbps (Standard)</option>
+                            <option value="192k" selected>192 kbps (High)</option>
+                            <option value="320k">320 kbps (Premium)</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="fade-input">Fade Duration (seconds):</label>
+                        <input type="number" id="fade-input" min="0" max="10" value="0" step="0.5">
+                    </div>
+                </div>
+
+                <div id="file-list" class="file-list"></div>
+
+                <div class="action-buttons">
+                    <button id="merge-btn" class="btn btn-primary">
+                        <i class="fas fa-link"></i> Join Files
+                    </button>
+                    <button id="clear-btn" class="btn btn-secondary">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress-section" class="section hidden">
+                <div class="progress-container">
+                    <h3><i class="fas fa-cog fa-spin"></i> Processing Audio...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <p id="progress-text">Initializing...</p>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section id="download-section" class="section hidden">
+                <div class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Audio Successfully Merged!</h3>
+                    <p class="file-size-display"></p>
+                    <a id="download-link" class="btn btn-download" href="#" download>
+                        <i class="fas fa-download"></i> Download Joined MP3
+                    </a>
+                    <button id="new-merge-btn" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> Join Another Set of Files
+                    </button>
+                    <p class="download-note">
+                        <i class="fas fa-info-circle"></i>
+                        File will be automatically deleted after download for your privacy.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- Privacy Notice -->
+            <section class="privacy-notice">
+                <p><i class="fas fa-shield-alt"></i>
+                    <strong>Privacy Protected:</strong> All files are processed securely and deleted automatically after
+                    conversion.
+                </p>
+            </section>
+        </main>
+
+        <!-- FAQ Section for SEO -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What audio formats are supported?</h3>
+                <p>Our audio joiner supports MP3, WAV, OGG, M4A, AAC, and FLAC formats. All files are converted to MP3
+                    output.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a file size limit?</h3>
+                <p>Each file can be up to 100MB. You can merge multiple files as long as they're within this limit.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long does the merging process take?</h3>
+                <p>Processing time depends on file sizes and quantity. Most merges complete within 30-60 seconds.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are my files stored on your servers?</h3>
+                <p>No, all files are automatically deleted from our servers immediately after processing for your
+                    privacy.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Audio Joiner Tool. Free online audio merger.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
